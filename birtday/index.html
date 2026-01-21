@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Birth day</title>
+
+<style>
+body{
+margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;
+background:linear-gradient(135deg, #114ab4, #a60ab4);
+color:#333}
+.container{
+min-height:100vh;display:flex;align-items:center;justify-content:center;
+text-align:center;padding:20px}
+.card{
+background:white;padding:40px 30px;max-width:500px;
+border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,.4)}
+h1{font-size:24px;margin-bottom:20px}
+h2{font-size:18px}
+p{font-size:16px;line-height:1.7;margin-bottom:20px}
+.puisi p{font-style:italic}
+button{
+padding:10px 24px;border:none;border-radius:20px;
+background:#a60ab4;color:#fff;font-size:14px;cursor:pointer}
+button:hover{background:hsl(209,97%,55%)}
+.hidden{display:none}
+
+/* GLOW */
+.glow{animation:glow 1.5s ease-in-out infinite alternate}
+@keyframes glow{
+from{text-shadow:0 0 5px #ff8,0 0 10px #ff8}
+to{text-shadow:0 0 25px #ff4,0 0 40px #ff4}}
+
+/* BALLOON */
+.balloon{
+position:fixed;bottom:-80px;width:40px;height:55px;border-radius:50%;
+animation:floatUp linear forwards;z-index:9998}
+.balloon::after{
+content:"";position:absolute;width:2px;height:30px;
+background:#555;top:55px;left:50%}
+@keyframes floatUp{to{transform:translateY(-120vh);opacity:0}}
+
+/* SPARKLE */
+.sparkle{
+position:fixed;width:6px;height:6px;border-radius:50%;
+background:white;opacity:.8;animation:twinkle 1s infinite alternate;
+z-index:9997}
+@keyframes twinkle{from{transform:scale(.5)}to{transform:scale(1.5)}}
+
+/* CONFETTI */
+.confetti{
+position:fixed;top:-10px;width:8px;height:14px;opacity:.8;
+animation:fall linear forwards;z-index:9999}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+
+#typeText{
+font-size:18px;
+color:#ff4d4d;
+margin-bottom:15px;
+font-weight:bold;
+letter-spacing:2px;
+}
+</style>
+</head>
+
+<body>
+<div class="container"><div class="card">
+
+<div id="slide1">
+<h1>haee bess</h1>
+<p>
+sebelumnya IZIIIN yaa buat cwomu takute gimana2, ini cuma halaman kecil yang ku buatt just to wish you a happy birthday  
+udahhh deh, mending di klik aja ituu biar TaHu
+</p>
+<button onclick="toSlide2()">Tisu2</button>
+</div>
+
+<div id="slide2" class="hidden">
+<h1 id="judulBD">Happy Birthday yang ke 15 bess🎉</h1>
+<h2 id="typeText"></h2>
+<p>
+semoga panjang umur, sehat selalu, happy selalu dan  
+semoga apa yang disemogakan akan tersemogakan. 
+makasihh juga dah jadi temen ku sek  
+gak pernah ada dendam ke aku setelah smw  
+yg ku lakuin ke km. yaa intinya terimakasih buat semuanya.
+wish all the best for youu.
+</p>
+<p>
+"ehh aku ada lagi sesuatuu nih di next slidee, tapi janji gak di judge yaa, aku buate with ai tapii dah ku revisi beberapa"
+</p>
+<button onclick="toSlide3()">Next dah</button>
+</div>
+
+<div id="slide3" class="hidden puisi">
+<h1>Puisi from me n ?? </h1>
+<p>hari ini namamu<br>disebut pelan oleh waktu,<br>bukan untuk ditahan,<br>tapi untuk dirayakan sebentar.</p>
+<p>satu tahun bertambah,<br>membawa cerita yang mungkin<br>gak semuanya ringan,<br>tapi semuanya berarti.</p>
+<p>semoga langkahmu tetap tenang,<br>meski arah hidup kadang berbelok,<br>
+dan kamu selalu diberi ruang<br>untuk tumbuh dengan caramu sendiri.</p>
+<p>semoga hal-hal baik<br>datang tanpa banyak ribut,<br>
+dan yang berat pelan-pelan<br>menemukan jalan pulangnya.</p>
+<p>hari ini cuma satu hari,<br>tapi harapanku sederhana:<br>
+semoga kamu baik-baik saja,<br>hari ini, besok, dan seterusnya.</p>
+-sapgpt<br>
+<button onclick="toSlide4()">lanjut</button>
+</div>
+
+<div id="slide4" class="hidden">
+<h1>notes</h1>
+<p>
+aku tau ini gak sebanding sama effrot effrot mu dlu ke aku, tapi aku buat ini tulus kok.
+maaf yaa bes nek dlu aku kek gitu, soale aku bener bener emoh kamu berharap sama aku tiff,
+hueem ngeritilah yaa, yaa itu dari pandangan ku aja sih, walaupun kw wes bola bali ngmng nek wes ga berharap yaa.
+semangatt buat tka besok bess, semoga kita semua di beri kelancaran dan hasil yang sesuai keinginan yaa. semangatt terusss
+</p>
+<i>Noted "tentang web iki ojo di delokne neng konco lanang kelas mu ya, isinn aku hehee. soale konco lanang kelas mu nek ngenyek mecicil j"</i>
+<br><br>
+<button onclick="toSlide5()">lanjut</button>
+</div>
+
+<div id="slide5" class="hidden">
+<h1>WA prince?</h1>
+<p>klik aja nanti masuk ke kontak P.sapta</p>
+<a href="https://wa.me/085726054536" target="_blank">
+<button>Chat di WhatsApp</button>
+</a>
+<br><br>
+<button onclick="toSlide1()">back to first</button>
+</div>
+
+</div></div>
+
+<audio id="musik2" src="musik2.mp3" loop></audio>
+<audio id="musik3" src="musik3.mp3" loop></audio>
+<audio id="musik4" src="musik4.mp3" loop></audio>
+
+<script>
+const musik2=document.getElementById("musik2"),
+musik3=document.getElementById("musik3"),
+musik4=document.getElementById("musik4");
+
+function stopAllMusic(){
+musik2.pause();musik2.currentTime=0;
+musik3.pause();musik3.currentTime=0;
+musik4.pause();musik4.currentTime=0;
+}
+
+function sparkleBG(){
+for(let i=0;i<30;i++){
+const s=document.createElement("div");
+s.classList.add("sparkle");
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+document.body.appendChild(s);
+setTimeout(()=>s.remove(),2000);
+}}
+
+function typeWriter(text, el){
+el.innerHTML="";
+let i=0;
+const timer=setInterval(()=>{
+el.innerHTML+=text.charAt(i);
+i++;
+if(i===text.length) clearInterval(timer);
+},100);
+}
+
+function partySlide2(){
+judulBD.classList.add("glow");
+typeWriter("WIHH TMBH TUA AJA NII BES", document.getElementById("typeText"));
+for(let i=0;i<12;i++){
+const b=document.createElement("div");
+b.classList.add("balloon");
+const c=["#ff4d4d","#ffd93d","#4dff88","#4da6ff","#c77dff"];
+b.style.backgroundColor=c[Math.floor(Math.random()*c.length)];
+b.style.left=Math.random()*100+"vw";
+b.style.animationDuration=(Math.random()*3+4)+"s";
+document.body.appendChild(b);
+setTimeout(()=>b.remove(),7000);
+}
+sparkleBG();
+}
+
+function launchConfetti(){
+for(let i=0;i<80;i++){
+const c=document.createElement("div");
+c.classList.add("confetti");
+const col=["#ff4d4d","#ffd93d","#4dff88","#4da6ff","#c77dff"];
+c.style.left=Math.random()*100+"vw";
+c.style.backgroundColor=col[Math.floor(Math.random()*col.length)];
+c.style.animationDuration=(Math.random()*2+2)+"s";
+document.body.appendChild(c);
+setTimeout(()=>c.remove(),4000);
+}
+}
+
+function toSlide2(){slide1.classList.add("hidden");slide2.classList.remove("hidden");
+stopAllMusic();musik2.volume=0.35;musik2.play().catch(()=>{});partySlide2();}
+
+function toSlide3(){slide2.classList.add("hidden");slide3.classList.remove("hidden");
+stopAllMusic();musik3.play().catch(()=>{});sparkleBG();}
+
+function toSlide4(){slide3.classList.add("hidden");slide4.classList.remove("hidden");
+stopAllMusic();musik4.play().catch(()=>{});launchConfetti();sparkleBG();}
+
+function toSlide5(){slide4.classList.add("hidden");slide5.classList.remove("hidden");}
+
+function toSlide1(){slide5.classList.add("hidden");slide1.classList.remove("hidden");stopAllMusic();}
+</script>
+
+</body>
+</html>
